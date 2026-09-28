@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/charusat.png" type="image/png">
 <title>Contact - StudentHub</title>
+<script>
+  (function () {
+    var saved = localStorage.getItem("studenthub-theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  })();
+</script>
 </head>
 <body>
 <header>
-  <h1>Contact Us</h1>
-  <nav aria-label="Main navigation">
+  <div class="brand">
+    <img src="../images/charusat.png" alt="CHARUSAT logo">
+    <h1>Contact Us</h1>
+  </div>
+    <div class="header-actions">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+    <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <span class="hamburger-icon" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+  </div>
+<nav aria-label="Main navigation" id="primary-nav">
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -25,9 +46,9 @@
   <section aria-labelledby="details-heading">
     <h2 id="details-heading">Contact Details</h2>
     <address>
-      <p>Email: </p>
-      <p>Phone: </p>
-      <p>Address: </p>
+      <p>Email: support@studenthub.edu.in</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Address: CHARUSAT Campus, Changa, Anand, Gujarat, India</p>
     </address>
   </section>
 
@@ -38,7 +59,7 @@
 
   <aside aria-labelledby="hours-heading">
     <h2 id="hours-heading">Office Hours</h2>
-    <p></p>
+    <p>Monday – Friday: 9:00 AM to 5:00 PM<br>Saturday: 10:00 AM to 1:00 PM<br>Sunday: Closed</p>
   </aside>
 </main>
 
@@ -50,5 +71,7 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
+<script src="../js/theme.js" defer></script>
+<script src="../js/menu.js" defer></script>
 </body>
 </html>

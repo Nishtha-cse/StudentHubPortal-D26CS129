@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/charusat.png" type="image/png">
 <title>About Us - StudentHub</title>
+<script>
+  (function () {
+    var saved = localStorage.getItem("studenthub-theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  })();
+</script>
 </head>
 <body>
 <header>
-  <h1>About StudentHub</h1>
-  <nav aria-label="Main navigation">
+  <div class="brand">
+    <img src="../images/charusat.png" alt="CHARUSAT logo">
+    <h1>About StudentHub</h1>
+  </div>
+    <div class="header-actions">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+    <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <span class="hamburger-icon" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+  </div>
+<nav aria-label="Main navigation" id="primary-nav">
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html" aria-current="page">About</a></li>
@@ -24,22 +45,22 @@
 <main id="main-content">
   <section aria-labelledby="mission-heading">
     <h2 id="mission-heading">Mission</h2>
-    <p></p>
+    <p>StudentHub exists to give every student a single, reliable place to manage their academic life — from tracking attendance and assignments to staying on top of campus events — without juggling multiple disconnected tools.</p>
   </section>
 
   <section aria-labelledby="objectives-heading">
     <h2 id="objectives-heading">Objectives</h2>
-    <p></p>
+    <p>Our goals are to simplify everyday academic tasks, improve communication between students and administration, keep everyone informed about campus events, and make it easy to share feedback that leads to real improvements.</p>
   </section>
 
   <section aria-labelledby="benefits-heading">
     <h2 id="benefits-heading">Benefits</h2>
-    <p></p>
+    <p>Students save time by managing everything from one dashboard, staff gain a clearer overview of student activity, and the whole campus community stays better connected through timely announcements and updates.</p>
   </section>
 
   <section aria-labelledby="features-heading">
     <h2 id="features-heading">Features</h2>
-    <p></p>
+    <p>StudentHub offers attendance tracking, assignment reminders, an events calendar with easy registration, a feedback system, and a personal profile dashboard — all accessible from any device.</p>
   </section>
 
   <aside aria-labelledby="related-heading">
@@ -59,5 +80,7 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
+<script src="../js/theme.js" defer></script>
+<script src="../js/menu.js" defer></script>
 </body>
 </html>

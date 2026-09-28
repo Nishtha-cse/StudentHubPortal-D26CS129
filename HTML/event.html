@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/charusat.png" type="image/png">
 <title>Events - StudentHub</title>
+<script>
+  (function () {
+    var saved = localStorage.getItem("studenthub-theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  })();
+</script>
 </head>
 <body>
 <header>
-  <h1>Upcoming Events</h1>
-  <nav aria-label="Main navigation">
+  <div class="brand">
+    <img src="../images/charusat.png" alt="CHARUSAT logo">
+    <h1>Upcoming Events</h1>
+  </div>
+    <div class="header-actions">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+    <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <span class="hamburger-icon" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+  </div>
+<nav aria-label="Main navigation" id="primary-nav">
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -26,16 +47,16 @@
     <h2 id="events-heading">All Events</h2>
 
     <article>
-      <h3>Event Name</h3>
-      <p>Date: </p>
-      <p>Venue: </p>
+      <h3>Annual Tech Fest</h3>
+      <p>Date: March 15, 2026</p>
+      <p>Venue: Main Auditorium</p>
       <p><a href="#">[ Register ]</a></p>
     </article>
 
     <article>
-      <h3>Event Name</h3>
-      <p>Date: </p>
-      <p>Venue: </p>
+      <h3>Blood Donation Camp</h3>
+      <p>Date: April 2, 2026</p>
+      <p>Venue: Sports Complex Ground</p>
       <p><a href="#">[ Register ]</a></p>
     </article>
   </section>
@@ -43,8 +64,8 @@
   <aside aria-labelledby="categories-heading">
     <h2 id="categories-heading">Event Categories</h2>
     <ul>
-      <li></li>
-      <li></li>
+      <li>Technical</li>
+      <li>Cultural &amp; Social</li>
     </ul>
   </aside>
 </main>
@@ -57,5 +78,7 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
+<script src="../js/theme.js" defer></script>
+<script src="../js/menu.js" defer></script>
 </body>
 </html>

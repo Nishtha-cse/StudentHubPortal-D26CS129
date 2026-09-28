@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/charusat.png" type="image/png">
 <title>Dashboard - StudentHub</title>
+<script>
+  (function () {
+    var saved = localStorage.getItem("studenthub-theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  })();
+</script>
 </head>
 <body>
 <header>
-  <img src="images/logo.png" alt="StudentHub logo">
-  <nav aria-label="Main navigation">
+  <div class="brand">
+    <img src="../images/charusat.png" alt="CHARUSAT logo">
+    <h1>Dashboard</h1>
+  </div>
+    <div class="header-actions">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+    <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <span class="hamburger-icon" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+  </div>
+<nav aria-label="Main navigation" id="primary-nav">
     <ul>
       <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
       <li><a href="profile.html">Profile</a></li>
@@ -19,52 +40,54 @@
 </header>
 
 <main id="main-content">
-  <h1>Welcome Student</h1>
+  <h2>Welcome, Student!</h2>
 
   <section aria-labelledby="attendance-heading">
     <h2 id="attendance-heading">Attendance</h2>
-    <p></p>
+    <p>You have attended 42 out of 45 classes this semester — an overall attendance of 93%.</p>
   </section>
 
   <section aria-labelledby="assignments-heading">
     <h2 id="assignments-heading">Assignments</h2>
-    <p></p>
+    <p>You have 2 pending assignments: Data Structures Lab Report (due Friday) and Database Systems Case Study (due next Monday).</p>
   </section>
 
   <section aria-labelledby="events-heading">
     <h2 id="events-heading">Events</h2>
     <article>
       <h3>Upcoming Event</h3>
-      <p></p>
+      <p>Annual Tech Fest — March 15, 2026 at the Main Auditorium. Registration closes March 10.</p>
     </article>
   </section>
 
   <section aria-labelledby="activity-heading">
     <h2 id="activity-heading">Recent Activity</h2>
     <article>
-      <p></p>
+      <p>Submitted Assignment 3 for Data Structures.</p>
     </article>
     <article>
-      <p></p>
+      <p>Marked present for today's Database Systems lecture.</p>
     </article>
     <article>
-      <p></p>
+      <p>Registered for the Annual Tech Fest.</p>
     </article>
   </section>
 
   <aside aria-labelledby="notices-heading">
     <h2 id="notices-heading">Notices</h2>
-    <p></p>
+    <p>Mid-semester exams begin October 10. Check the Events page for your full timetable.</p>
   </aside>
 </main>
 
 <footer>
   <nav aria-label="Footer navigation">
-    <a href="feedback.html">Contact</a> |
+    <a href="contact.html">Contact</a> |
     <a href="about.html">About</a>
   </nav>
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
+<script src="../js/theme.js" defer></script>
+<script src="../js/menu.js" defer></script>
 </body>
 </html>

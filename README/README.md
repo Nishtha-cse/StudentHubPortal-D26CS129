@@ -105,3 +105,96 @@ Author
 **Name:** `Nishtha Panchal`
 **Enrollment No.:** `D26CS129`
 **Institute:** Charotar University of Science and Technology (CHARUSAT), FTE
+
+---
+
+## Practical 2: Semantic HTML5 Pages with Accessibility-Ready Structure
+
+Develop static HTML5 pages for StudentHub using semantic HTML elements and accessibility-friendly structure.
+
+### Pages
+- Home
+- About
+- Register
+- Login
+- Dashboard
+- Events
+- Profile
+- Contact
+- Admin
+- FAQ
+- Feedback
+
+### Technologies
+- HTML5
+- VS Code
+
+### Deliverables
+- Static HTML pages
+- Page navigation
+- Semantic HTML structure
+- Accessibility-ready structure
+- Screenshots
+
+---
+
+## Practical 3: Responsive UI Design using CSS Grid, Flexbox, and Bootstrap
+
+Design responsive StudentHub pages using CSS Grid, Flexbox, and Bootstrap.
+
+### Pages
+- Home
+- About
+- Register
+- Dashboard
+- Events
+
+### Technologies
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- Bootstrap
+
+### Deliverables
+- Responsive pages
+- Mobile view
+- Tablet view
+- Desktop view
+- Screenshots
+
+---
+
+## Practical 4: JavaScript DOM Manipulation, Event Handling, and UI Interactivity
+
+Add interactive UI components to StudentHub using JavaScript.
+
+### Features
+- Collapsible FAQ
+- Modal popup
+- Image/content slider
+- Notification banner
+- Hamburger menu
+- Light/Dark theme switcher
+
+### Technologies
+- HTML5
+- CSS3
+- JavaScript ES6+
+- VS Code
+
+### Deliverables
+- Interactive UI components
+- Live demo
+- Source code
+
+---
+
+## Practical Progress
+
+| Practical | Status |
+|---|---|
+| Practical 1 | Completed |
+| Practical 2 | Completed |
+| Practical 3 | Completed |
+| Practical 4 | Completed |

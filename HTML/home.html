@@ -3,15 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/charusat.png" type="image/png">
 <title>Home - StudentHub</title>
 <meta name="description" content="StudentHub - manage academics in one place.">
+<script>
+  (function () {
+    var saved = localStorage.getItem("studenthub-theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  })();
+
+</script>
 </head>
 <body>
+<div class="notice-banner" id="notice-banner" data-notice-id="techfest-2026" role="status">
+  <p>New: Annual Tech Fest registrations are now open &mdash; see Latest Announcements below.</p>
+  <button type="button" class="notice-close" aria-label="Dismiss notification">&times;</button>
+
+</div>
 
 <header>
-  <img src="images/logo.png" alt="StudentHub logo">
-  <h1>StudentHub</h1>
-  <nav aria-label="Main navigation">
+  <div class="brand">
+    <img src="../images/charusat.png" alt="CHARUSAT logo">
+    <h1>StudentHub</h1>
+  </div>
+    <div class="header-actions">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+    <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <span class="hamburger-icon" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+
+  </div><nav aria-label="Main navigation" id="primary-nav">
     <ul>
       <li><a href="home.html" aria-current="page">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -28,7 +53,7 @@
 <main id="main-content">
   <section aria-labelledby="welcome-heading">
     <h2 id="welcome-heading">Welcome to StudentHub</h2>
-    <p>Manage academics in one place.</p>
+    <p>Track attendance, manage assignments, stay updated on campus events, and share feedback — all from a single, easy-to-use dashboard built for CHARUSAT students.</p>
     <p>
       <a href="login.html">Login</a> &nbsp;
       <a href="register.html">Register</a>
@@ -38,23 +63,33 @@
   <section aria-labelledby="announcements-heading">
     <h2 id="announcements-heading">Latest Announcements</h2>
 
-    <article>
-      <h3>Event 1</h3>
-      <p></p>
-      <p><a href="event.html">Read more</a></p>
-    </article>
+    <div class="slider" aria-roledescription="carousel" aria-label="Latest announcements">
+      <div class="slider-track">
+        <article class="slide">
+          <h3>Semester Exam Schedule Released</h3>
+          <p>The examination timetable for the upcoming semester has been published. Check your department notice board or the Events page for exact dates and venues.</p>
+          <p><a href="event.html">Read more</a></p>
 
-    <article>
-      <h3>Event 2</h3>
-      <p></p>
-      <p><a href="event.html">Read more</a></p>
-    </article>
+        </article>
 
-    <article>
-      <h3>Event 3</h3>
-      <p></p>
-      <p><a href="event.html">Read more</a></p>
-    </article>
+        <article class="slide" hidden>
+          <h3>Annual Tech Fest Registrations Open</h3>
+          <p>Sign up now for workshops, coding contests, and guest talks at this year's tech fest. Limited seats available for select sessions.</p>
+          <p><a href="event.html">Read more</a></p>
+
+        </article>
+
+        <article class="slide" hidden>
+          <h3>Library Timings Extended</h3>
+          <p>The central library will now stay open until 9 PM on weekdays during the exam period to support student preparation.</p>
+          <p><a href="event.html">Read more</a></p>
+        </article>
+      </div>
+      <button type="button" class="slider-prev" aria-label="Previous announcement">&#8249;</button>
+      <button type="button" class="slider-next" aria-label="Next announcement">&#8250;</button>
+      <div class="slider-dots" role="tablist" aria-label="Choose announcement"></div>
+
+    </div>
   </section>
 
   <aside aria-labelledby="quicklinks-heading">
@@ -74,5 +109,9 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
+<script src="../js/theme.js" defer></script>
+<script src="../js/menu.js" defer></script>
+<script src="../js/banner.js" defer></script>
+<script src="../js/slider.js" defer></script>
 </body>
 </html>

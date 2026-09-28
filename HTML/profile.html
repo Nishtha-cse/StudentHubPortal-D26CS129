@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../images/charusat.png" type="image/png">
 <title>Profile - StudentHub</title>
+<script>
+  (function () {
+    var saved = localStorage.getItem("studenthub-theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  })();
+</script>
 </head>
 <body>
 <header>
-  <h1>Profile</h1>
-  <nav aria-label="Main navigation">
+  <div class="brand">
+    <img src="../images/charusat.png" alt="CHARUSAT logo">
+    <h1>Profile</h1>
+  </div>
+    <div class="header-actions">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+    <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <span class="hamburger-icon" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+  </div>
+<nav aria-label="Main navigation" id="primary-nav">
     <ul>
       <li><a href="dashboard.html">Dashboard</a></li>
       <li><a href="profile.html" aria-current="page">Profile</a></li>
@@ -21,7 +42,7 @@
 <main id="main-content">
   <section aria-labelledby="details-heading">
     <h2 id="details-heading">Your Details</h2>
-    <img src="images/profile-placeholder.png" alt="Profile photo">
+    <img src="../images/profile-placeholder.png" alt="Profile photo">
 
     <table border="1">
       <caption>Profile Information</caption>
@@ -33,16 +54,16 @@
         <th scope="col">Phone Number</th>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>Priya Patel</td>
+        <td>priya.patel@charusat.edu.in</td>
+        <td>Computer Engineering</td>
+        <td>5th</td>
+        <td>+91 98765 43210</td>
       </tr>
     </table>
 
     <br>
-    <button type="button">Edit Profile</button>
+    <button type="button" data-modal-target="edit-profile-modal">Edit Profile</button>
   </section>
 
   <aside aria-labelledby="settings-heading">
@@ -54,13 +75,32 @@
   </aside>
 </main>
 
+<div class="modal-overlay" id="edit-profile-modal" role="dialog" aria-modal="true" aria-labelledby="edit-profile-title" hidden>
+  <div class="modal">
+    <button type="button" class="modal-close" aria-label="Close dialog">&times;</button>
+    <h2 id="edit-profile-title">Edit Profile</h2>
+    <form action="#" method="post">
+      <label for="edit-phone">Phone Number</label><br>
+      <input type="tel" id="edit-phone" name="phone" value="+91 98765 43210"><br><br>
+
+      <label for="edit-semester">Semester</label><br>
+      <input type="text" id="edit-semester" name="semester" value="5th"><br><br>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
 <footer>
   <nav aria-label="Footer navigation">
-    <a href="feedback.html">Contact</a> |
+    <a href="contact.html">Contact</a> |
     <a href="about.html">About</a>
   </nav>
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
+<script src="../js/theme.js" defer></script>
+<script src="../js/menu.js" defer></script>
+<script src="../js/modal.js" defer></script>
 </body>
 </html>
