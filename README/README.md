@@ -190,6 +190,58 @@ Add interactive UI components to StudentHub using JavaScript.
 
 ---
 
+## Practical 5: Registration Form with Frontend Validation
+
+Create a student registration form with HTML5 input fields and JavaScript validation.
+
+### Features
+- Name validation
+- Email validation
+- Mobile number validation
+- Password and confirm password
+- Course and year selection
+- Gender selection
+- Terms acceptance
+- Regular expression validation
+- User-friendly error messages
+
+### Technologies
+- HTML5
+- JavaScript
+- Regular Expressions
+
+### Deliverables
+- Registration form
+- Valid and invalid input testing
+- Validation screenshots
+
+---
+
+## Practical 7: PHP Form Processing with Server-Side Validation and CSV/JSON File Storage
+
+Process registration or contact form data using PHP with server-side validation and store the data in CSV or JSON format.
+
+### Features
+- Form submission using POST
+- Server-side validation
+- Input sanitization
+- CSV/JSON file storage
+- Success and error messages
+
+### Technologies
+- PHP
+- XAMPP/WAMP/LAMP
+- HTML
+- Browser Developer Tools
+
+### Deliverables
+- PHP source code
+- Test cases
+- Generated CSV/JSON file
+- Success/error screenshots
+
+---
+
 ## Practical Progress
 
 | Practical | Status |
@@ -198,3 +250,5 @@ Add interactive UI components to StudentHub using JavaScript.
 | Practical 2 | Completed |
 | Practical 3 | Completed |
 | Practical 4 | Completed |
+| Practical 5 | Completed |
+| Practical 7 | Completed |
