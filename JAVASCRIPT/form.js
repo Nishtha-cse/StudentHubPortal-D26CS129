@@ -1,7 +1,3 @@
-// ======================================================
-// STUDENT REGISTRATION FORM VALIDATION (Practical 5)
-// ======================================================
-
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
@@ -15,24 +11,25 @@ if (registerForm) {
     const course = document.getElementById("course");
     const year = document.getElementById("year");
     const terms = document.getElementById("terms");
+    const captchaInput = document.getElementById("captchaInput");
 
     // ================= REGULAR EXPRESSIONS =================
 
     // Only letters and spaces, 3 to 50 characters
     const nameRegex = /^[A-Za-z\s]{3,50}$/;
 
-    // Basic email validation
+    // Basic email format: something@something.domain
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-    // Indian 10-digit mobile number (starts with 6-9)
+    // Indian mobile number: 10 digits, first digit 6-9
     const mobileRegex = /^[6-9][0-9]{9}$/;
 
-    // Password:
-    // minimum 8 characters, at least one uppercase, one lowercase,
-    // one number and one special character
+    // Password: minimum 8 characters, at least one uppercase letter,
+    // one lowercase letter, one number and one special character
+    // (?=.*X) is a "lookahead": it checks that X exists somewhere in the text
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
-    // ================= ERROR FUNCTION =================
+    // ================= HELPER FUNCTIONS =================
     function showError(input, errorId, message) {
         input.classList.remove("valid");
         input.classList.add("invalid");
@@ -40,7 +37,6 @@ if (registerForm) {
         document.getElementById(errorId).textContent = message;
     }
 
-    // ================= SUCCESS FUNCTION =================
     function showValid(input, errorId) {
         input.classList.remove("invalid");
         input.classList.add("valid");
@@ -56,7 +52,6 @@ if (registerForm) {
             showError(fullname, "fullnameError", "Full name is required.");
             return false;
         }
-
         if (!nameRegex.test(value)) {
             showError(fullname, "fullnameError", "Name must contain only letters and spaces.");
             return false;
@@ -74,7 +69,6 @@ if (registerForm) {
             showError(email, "emailError", "Email is required.");
             return false;
         }
-
         if (!emailRegex.test(value)) {
             showError(email, "emailError", "Enter a valid email address.");
             return false;
@@ -92,7 +86,6 @@ if (registerForm) {
             showError(mobile, "mobileError", "Mobile number is required.");
             return false;
         }
-
         if (!mobileRegex.test(value)) {
             showError(mobile, "mobileError", "Enter a valid 10-digit mobile number.");
             return false;
@@ -110,7 +103,6 @@ if (registerForm) {
             showError(password, "passwordError", "Password is required.");
             return false;
         }
-
         if (!passwordRegex.test(value)) {
             showError(
                 password,
@@ -132,7 +124,6 @@ if (registerForm) {
             showError(confirmPassword, "confirmPasswordError", "Please confirm your password.");
             return false;
         }
-
         if (value !== password.value) {
             showError(confirmPassword, "confirmPasswordError", "Passwords do not match.");
             return false;
@@ -193,6 +184,7 @@ if (registerForm) {
 
     // ==================================================
     // PASSWORD STRENGTH METER
+    // One point for each rule the password satisfies (0 to 5)
     // ==================================================
     function updatePasswordStrength() {
         const value = password.value;
@@ -200,7 +192,6 @@ if (registerForm) {
         const strengthText = document.getElementById("strengthText");
 
         let score = 0;
-
         if (value.length >= 8) score++;
         if (/[A-Z]/.test(value)) score++;
         if (/[a-z]/.test(value)) score++;
@@ -210,12 +201,8 @@ if (registerForm) {
         if (value === "") {
             strengthBar.style.width = "0";
             strengthText.textContent = "Password strength: \u2014";
-        } else if (score <= 1) {
-            strengthBar.style.width = "20%";
-            strengthBar.style.backgroundColor = "#dc3545";
-            strengthText.textContent = "Password strength: Weak";
-        } else if (score === 2) {
-            strengthBar.style.width = "40%";
+        } else if (score <= 2) {
+            strengthBar.style.width = score <= 1 ? "20%" : "40%";
             strengthBar.style.backgroundColor = "#dc3545";
             strengthText.textContent = "Password strength: Weak";
         } else if (score === 3) {
@@ -233,15 +220,104 @@ if (registerForm) {
         }
     }
 
-    // ================= REAL-TIME VALIDATION =================
+    // ==================================================
+    // ADVANCED EXTENSION: CUSTOM CAPTCHA USING CANVAS
+    // (delete this whole section + the captcha block in the HTML to remove it)
+    // ==================================================
+    const canvas = document.getElementById("captchaCanvas");
+    const ctx = canvas.getContext("2d");
+    let currentCaptcha = "";
+
+    function generateCaptchaText() {
+        // 0, O, 1, I and L are left out because they look alike
+        const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+        let text = "";
+        for (let i = 0; i < 6; i++) {
+            text += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return text;
+    }
+
+    function drawCaptcha() {
+        currentCaptcha = generateCaptchaText();
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#f4f6f8";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // random noise lines
+        for (let i = 0; i < 5; i++) {
+            ctx.strokeStyle = "rgba(79, 70, 229, " + (0.15 + Math.random() * 0.2) + ")";
+            ctx.beginPath();
+            ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+            ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+            ctx.stroke();
+        }
+
+        // the characters, each slightly rotated and shifted
+        const spacing = canvas.width / (currentCaptcha.length + 1);
+        for (let j = 0; j < currentCaptcha.length; j++) {
+            ctx.save();
+            ctx.translate(spacing * (j + 1), canvas.height / 2 + (Math.random() * 10 - 5));
+            ctx.rotate(Math.random() * 0.5 - 0.25);
+            ctx.font = "bold 24px Arial";
+            ctx.fillStyle = "#1c2430";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(currentCaptcha.charAt(j), 0, 0);
+            ctx.restore();
+        }
+
+        // random noise dots
+        for (let k = 0; k < 30; k++) {
+            ctx.fillStyle = "rgba(28, 36, 48, 0.2)";
+            ctx.beginPath();
+            ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, 1, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function validateCaptcha() {
+        const value = captchaInput.value.trim().toUpperCase();
+
+        if (value === "") {
+            showError(captchaInput, "captchaError", "Please enter the code shown above.");
+            return false;
+        }
+        if (value !== currentCaptcha) {
+            showError(captchaInput, "captchaError", "Code does not match. Try again.");
+            return false;
+        }
+
+        showValid(captchaInput, "captchaError");
+        return true;
+    }
+
+    document.getElementById("refreshCaptcha").addEventListener("click", function () {
+        drawCaptcha();
+        captchaInput.value = "";
+        captchaInput.classList.remove("valid", "invalid");
+        captchaInput.removeAttribute("aria-invalid");
+        document.getElementById("captchaError").textContent = "";
+    });
+
+    drawCaptcha();
+
+    // ================= REAL-TIME VALIDATION (INTERMEDIATE EXTENSION) =================
+    // "input" fires on every key press / paste; "change" fires when a choice is made
     fullname.addEventListener("input", validateName);
     email.addEventListener("input", validateEmail);
-    mobile.addEventListener("input", validateMobile);
+
+    mobile.addEventListener("input", function () {
+        mobile.value = mobile.value.replace(/\D/g, "");   // allow digits only
+        validateMobile();
+    });
 
     password.addEventListener("input", function () {
         updatePasswordStrength();
         validatePassword();
 
+        // re-check confirm password if the user already typed something there
         if (confirmPassword.value !== "") {
             validateConfirmPassword();
         }
@@ -251,16 +327,17 @@ if (registerForm) {
     course.addEventListener("change", validateCourse);
     year.addEventListener("change", validateYear);
     terms.addEventListener("change", validateTerms);
+    captchaInput.addEventListener("input", validateCaptcha);
 
-    // Gender validation
     document.querySelectorAll('input[name="gender"]').forEach(function (radio) {
         radio.addEventListener("change", validateGender);
     });
 
     // ================= FORM SUBMISSION =================
     registerForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+        event.preventDefault();   // stop the page from reloading
 
+        // Every validator runs (no short-circuit) so all errors show together
         const nameValid = validateName();
         const emailValid = validateEmail();
         const mobileValid = validateMobile();
@@ -269,18 +346,13 @@ if (registerForm) {
         const courseValid = validateCourse();
         const yearValid = validateYear();
         const genderValid = validateGender();
+        const captchaValid = validateCaptcha();
         const termsValid = validateTerms();
 
         const isFormValid =
-            nameValid &&
-            emailValid &&
-            mobileValid &&
-            passwordValid &&
-            confirmPasswordValid &&
-            courseValid &&
-            yearValid &&
-            genderValid &&
-            termsValid;
+            nameValid && emailValid && mobileValid && passwordValid &&
+            confirmPasswordValid && courseValid && yearValid &&
+            genderValid && captchaValid && termsValid;
 
         const successMessage = document.getElementById("successMessage");
 
@@ -292,7 +364,7 @@ if (registerForm) {
         } else {
             successMessage.textContent = "";
 
-            // Move keyboard focus to the first field with an error
+            // Keyboard users: move focus to the first field with an error
             const firstInvalid = registerForm.querySelector(".invalid");
             if (firstInvalid) {
                 firstInvalid.focus();

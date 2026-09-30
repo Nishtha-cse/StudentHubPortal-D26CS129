@@ -2,33 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="icon" href="../images/charusat.png" type="image/png">
+<link rel="icon" href="images/charusat.png" type="image/png">
 <title>Register - StudentHub</title>
-<script>
-  (function () {
-    var saved = localStorage.getItem("studenthub-theme");
-    if (saved === "dark" || saved === "light") {
-      document.documentElement.setAttribute("data-theme", saved);
-    }
-  })();
-</script>
 </head>
-<body>
+<body class="page-register">
 <header>
   <div class="brand">
-    <img src="../images/charusat.png" alt="CHARUSAT logo">
+    <img src="images/charusat.png" alt="CHARUSAT logo">
     <h1>Register</h1>
   </div>
-    <div class="header-actions">
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
-    <button type="button" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
-      <span class="hamburger-icon" aria-hidden="true"></span>
-      <span>Menu</span>
-    </button>
-  </div>
-<nav aria-label="Main navigation" id="primary-nav">
+  <nav aria-label="Main navigation">
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -45,21 +29,21 @@
 <main id="main-content">
   <section aria-labelledby="register-heading">
     <h2 id="register-heading">Create an Account</h2>
-    <form id="register-form" action="dashboard.html" method="post">
+    <form action="#" method="post">
       <label for="fullname">Full Name</label><br>
-      <input type="text" id="fullname" name="fullname" required><br><br>
+      <input type="text" id="fullname" name="fullname"><br><br>
 
       <label for="email">Email</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+      <input type="email" id="email" name="email"><br><br>
 
       <label for="studentid">Student ID</label><br>
-      <input type="text" id="studentid" name="studentid" required><br><br>
+      <input type="text" id="studentid" name="studentid"><br><br>
 
       <label for="password">Password</label><br>
-      <input type="password" id="password" name="password" required><br><br>
+      <input type="password" id="password" name="password"><br><br>
 
       <label for="confirmpassword">Confirm Password</label><br>
-      <input type="password" id="confirmpassword" name="confirmpassword" required><br><br>
+      <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
 
       <button type="submit">Register</button>
     </form>
@@ -76,8 +60,5 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
-<script src="../js/theme.js" defer></script>
-<script src="../js/menu.js" defer></script>
-<script src="../js/register.js" defer></script>
 </body>
 </html>

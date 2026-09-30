@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration - StudentHub</title>
+
+  <!-- Optional icons (needs internet). The form works fine without them. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+  <main class="register-card">
+
+    <div class="register-head">
+      <span class="register-badge" aria-hidden="true"><i class="bi bi-person-vcard"></i></span>
+      <h1>Student Registration</h1>
+      <p>Fill in your details below to set up your StudentHub academic profile.</p>
+    </div>
+
+    <!-- novalidate: browser's default popups are turned off, our JavaScript shows the errors -->
+    <form id="registerForm" action="#" method="POST" novalidate>
+
+      <!-- FULL NAME -->
+      <div class="form-group">
+        <label for="fullname">Full Name <span class="required" aria-hidden="true">*</span></label>
+        <div class="input-wrapper">
+          <span class="input-icon" aria-hidden="true"><i class="bi bi-person"></i></span>
+          <input type="text" id="fullname" name="fullname" class="form-control"
+                 placeholder="e.g. Rahul Sharma" autocomplete="name" maxlength="50"
+                 aria-describedby="fullnameError" required>
+        </div>
+        <small class="error-message" id="fullnameError" role="alert"></small>
+      </div>
+
+      <!-- EMAIL & MOBILE -->
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="email">Student Email <span class="required" aria-hidden="true">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+            <input type="email" id="email" name="email" class="form-control"
+                   placeholder="student@example.com" autocomplete="email"
+                   aria-describedby="emailError" required>
+          </div>
+          <small class="error-message" id="emailError" role="alert"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="mobile">Mobile Number <span class="required" aria-hidden="true">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true"><i class="bi bi-phone"></i></span>
+            <input type="tel" id="mobile" name="mobile" class="form-control"
+                   placeholder="10-digit mobile number" autocomplete="tel"
+                   maxlength="10" inputmode="numeric"
+                   aria-describedby="mobileError" required>
+          </div>
+          <small class="error-message" id="mobileError" role="alert"></small>
+        </div>
+      </div>
+
+      <!-- GENDER -->
+      <fieldset class="form-group">
+        <legend>Gender <span class="required" aria-hidden="true">*</span></legend>
+        <div class="gender-radio-group" aria-describedby="genderError">
+          <label class="gender-option">
+            <input type="radio" name="gender" value="male">
+            <span class="gender-pill"><i class="bi bi-gender-male" aria-hidden="true"></i> Male</span>
+          </label>
+          <label class="gender-option">
+            <input type="radio" name="gender" value="female">
+            <span class="gender-pill"><i class="bi bi-gender-female" aria-hidden="true"></i> Female</span>
+          </label>
+          <label class="gender-option">
+            <input type="radio" name="gender" value="other">
+            <span class="gender-pill"><i class="bi bi-gender-ambiguous" aria-hidden="true"></i> Other</span>
+          </label>
+        </div>
+        <small class="error-message" id="genderError" role="alert"></small>
+      </fieldset>
+
+      <!-- COURSE & YEAR -->
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="course">Course <span class="required" aria-hidden="true">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true"><i class="bi bi-book"></i></span>
+            <select id="course" name="course" class="form-select" aria-describedby="courseError" required>
+              <option value="">Select Course</option>
+              <option value="cse">B.Tech - CSE</option>
+              <option value="it">B.Tech - IT</option>
+              <option value="bca">BCA</option>
+              <option value="mca">MCA</option>
+            </select>
+          </div>
+          <small class="error-message" id="courseError" role="alert"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="year">Academic Year <span class="required" aria-hidden="true">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true"><i class="bi bi-calendar3"></i></span>
+            <select id="year" name="year" class="form-select" aria-describedby="yearError" required>
+              <option value="">Select Year</option>
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+            </select>
+          </div>
+          <small class="error-message" id="yearError" role="alert"></small>
+        </div>
+      </div>
+
+      <!-- PASSWORD & CONFIRM PASSWORD -->
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="password">Password <span class="required" aria-hidden="true">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true"><i class="bi bi-lock"></i></span>
+            <input type="password" id="password" name="password" class="form-control"
+                   placeholder="At least 8 characters" autocomplete="new-password" minlength="8"
+                   aria-describedby="strengthText passwordError" required>
+          </div>
+
+          <!-- Password strength meter -->
+          <div class="password-strength" aria-hidden="true">
+            <div id="strengthBar"></div>
+          </div>
+          <small id="strengthText" class="strength-text">Password strength: &mdash;</small>
+          <small class="error-message" id="passwordError" role="alert"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password <span class="required" aria-hidden="true">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true"><i class="bi bi-shield-lock"></i></span>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                   placeholder="Repeat password" autocomplete="new-password"
+                   aria-describedby="confirmPasswordError" required>
+          </div>
+          <small class="error-message" id="confirmPasswordError" role="alert"></small>
+        </div>
+      </div>
+
+      <!-- ADVANCED EXTENSION: custom CAPTCHA using Canvas (delete this block to remove it) -->
+      <div class="form-group" id="captchaGroup">
+        <label for="captchaInput">Security Check <span class="required" aria-hidden="true">*</span></label>
+        <div class="captcha-box">
+          <canvas id="captchaCanvas" width="160" height="50" role="img"
+                  aria-label="CAPTCHA image. Press the refresh button if it is unreadable."></canvas>
+          <button type="button" class="btn-refresh" id="refreshCaptcha">
+            <i class="bi bi-arrow-clockwise" aria-hidden="true"></i> Refresh
+          </button>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-icon" aria-hidden="true"><i class="bi bi-key"></i></span>
+          <input type="text" id="captchaInput" name="captchaInput" class="form-control"
+                 placeholder="Enter the code shown above" autocomplete="off"
+                 aria-describedby="captchaError" required>
+        </div>
+        <small class="error-message" id="captchaError" role="alert"></small>
+      </div>
+
+      <!-- TERMS -->
+      <div class="terms-check">
+        <input type="checkbox" id="terms" name="terms" aria-describedby="termsError">
+        <label for="terms">I accept and agree to the <strong>Terms &amp; Conditions</strong> <span class="required" aria-hidden="true">*</span></label>
+        <small class="error-message" id="termsError" role="alert"></small>
+      </div>
+
+      <!-- SUBMIT -->
+      <button type="submit" class="register-button">
+        <span>Register Account</span> <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </button>
+
+      <!-- SUCCESS MESSAGE -->
+      <p id="successMessage" class="success-message" role="status"></p>
+    </form>
+
+  </main>
+
+  <script src="form.js"></script>
+</body>
+</html>
