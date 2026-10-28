@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "question": "How do I register on StudentHub?",
+    "category": "Account",
+    "answer": "Open the Register page, fill in the form with valid details and accept the terms."
+  },
+  {
+    "id": 2,
+    "question": "I forgot my password. What should I do?",
+    "category": "Account",
+    "answer": "Use the reset option on the Login page or contact the admin team."
+  },
+  {
+    "id": 3,
+    "question": "Can I edit my profile after registering?",
+    "category": "Account",
+    "answer": "Yes, open your Profile page and update details such as mobile number and course."
+  },
+  {
+    "id": 4,
+    "question": "How do I register for an event?",
+    "category": "Events",
+    "answer": "Go to the Events page, choose an open event and click the register button."
+  },
+  {
+    "id": 5,
+    "question": "Can I cancel my event registration?",
+    "category": "Events",
+    "answer": "Yes, cancellation is allowed until two days before the event date."
+  },
+  {
+    "id": 6,
+    "question": "Where can I see upcoming events?",
+    "category": "Events",
+    "answer": "All upcoming events are listed on the Events page with search and filters."
+  },
+  {
+    "id": 7,
+    "question": "Are event certificates provided?",
+    "category": "Events",
+    "answer": "Participation certificates are issued by the organising department after the event."
+  },
+  {
+    "id": 8,
+    "question": "Who can see my student details?",
+    "category": "Privacy",
+    "answer": "Only you and authorised administrators can view your personal information."
+  },
+  {
+    "id": 9,
+    "question": "Is my password stored securely?",
+    "category": "Privacy",
+    "answer": "Passwords are hashed and never stored in plain text."
+  },
+  {
+    "id": 10,
+    "question": "How do I report a problem with the website?",
+    "category": "Support",
+    "answer": "Use the Contact or Feedback page to describe the problem."
+  },
+  {
+    "id": 11,
+    "question": "How long does support take to reply?",
+    "category": "Support",
+    "answer": "We usually reply within two working days."
+  },
+  {
+    "id": 12,
+    "question": "Which browsers are supported?",
+    "category": "Technical",
+    "answer": "Latest versions of Chrome, Edge, Firefox and Safari are supported."
+  },
+  {
+    "id": 13,
+    "question": "Does the site work on mobile?",
+    "category": "Technical",
+    "answer": "Yes, the layout is responsive for phones, tablets and desktops."
+  },
+  {
+    "id": 14,
+    "question": "Why does the dark theme reset sometimes?",
+    "category": "Technical",
+    "answer": "The theme is saved in localStorage, so clearing browser data resets it."
+  },
+  {
+    "id": 15,
+    "question": "How can I give feedback about an event?",
+    "category": "Support",
+    "answer": "Submit the Feedback form and select the event you attended."
+  },
+  {
+    "id": 16,
+    "question": "Who manages the events section?",
+    "category": "Events",
+    "answer": "Administrators add and update events from the admin dashboard."
+  }
+]

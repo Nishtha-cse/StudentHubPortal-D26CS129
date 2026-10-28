@@ -2,6 +2,10 @@
 // STUDENT REGISTRATION FORM VALIDATION (Practical 5)
 // ======================================================
 
+// Page to open after a successful registration.
+// Change this if your dashboard is in another folder, e.g. "student/dashboard.html"
+const DASHBOARD_URL = "dashboard.html";
+
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
@@ -15,6 +19,7 @@ if (registerForm) {
     const course = document.getElementById("course");
     const year = document.getElementById("year");
     const terms = document.getElementById("terms");
+    const successMessage = document.getElementById("successMessage");
 
     // ================= REGULAR EXPRESSIONS =================
 
@@ -27,9 +32,8 @@ if (registerForm) {
     // Indian 10-digit mobile number (starts with 6-9)
     const mobileRegex = /^[6-9][0-9]{9}$/;
 
-    // Password:
-    // minimum 8 characters, at least one uppercase, one lowercase,
-    // one number and one special character
+    // Password: minimum 8 characters, at least one uppercase, one lowercase,
+    // one number and one special character (@$!%*?&)
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
     // ================= ERROR FUNCTION =================
@@ -58,7 +62,7 @@ if (registerForm) {
         }
 
         if (!nameRegex.test(value)) {
-            showError(fullname, "fullnameError", "Name must contain only letters and spaces.");
+            showError(fullname, "fullnameError", "Name must be 3-50 characters, letters and spaces only.");
             return false;
         }
 
@@ -94,7 +98,7 @@ if (registerForm) {
         }
 
         if (!mobileRegex.test(value)) {
-            showError(mobile, "mobileError", "Enter a valid 10-digit mobile number.");
+            showError(mobile, "mobileError", "Enter a valid 10-digit mobile number starting with 6-9.");
             return false;
         }
 
@@ -115,7 +119,7 @@ if (registerForm) {
             showError(
                 password,
                 "passwordError",
-                "Password must contain 8+ characters, uppercase, lowercase, number and special character."
+                "Use 8+ characters with uppercase, lowercase, a number and a special character (@$!%*?&)."
             );
             return false;
         }
@@ -236,7 +240,12 @@ if (registerForm) {
     // ================= REAL-TIME VALIDATION =================
     fullname.addEventListener("input", validateName);
     email.addEventListener("input", validateEmail);
-    mobile.addEventListener("input", validateMobile);
+
+    // Mobile: strip anything that is not a digit as the user types
+    mobile.addEventListener("input", function () {
+        mobile.value = mobile.value.replace(/\D/g, "");
+        validateMobile();
+    });
 
     password.addEventListener("input", function () {
         updatePasswordStrength();
@@ -252,7 +261,6 @@ if (registerForm) {
     year.addEventListener("change", validateYear);
     terms.addEventListener("change", validateTerms);
 
-    // Gender validation
     document.querySelectorAll('input[name="gender"]').forEach(function (radio) {
         radio.addEventListener("change", validateGender);
     });
@@ -282,13 +290,15 @@ if (registerForm) {
             genderValid &&
             termsValid;
 
-        const successMessage = document.getElementById("successMessage");
-
         if (isFormValid) {
-            successMessage.textContent = "Registration successful!";
+            successMessage.textContent = "Registration successful! Redirecting to your dashboard...";
 
-            // In a real application,
-            // data would be sent to the server here.
+            // In a real application, data would be sent to the server here.
+
+            // Go to the student dashboard after a short pause
+            setTimeout(function () {
+                window.location.href = DASHBOARD_URL;
+            }, 1000);
         } else {
             successMessage.textContent = "";
 
@@ -303,4 +313,5 @@ if (registerForm) {
             }
         }
     });
+
 }

@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Patel",
+    "email": "aarav.patel@charusat.edu.in",
+    "course": "B.Tech IT",
+    "year": 1,
+    "enrollment": "26IT100",
+    "cgpa": 6.5,
+    "city": "Vadodara"
+  },
+  {
+    "id": 2,
+    "name": "Diya Shah",
+    "email": "diya.shah@charusat.edu.in",
+    "course": "B.Tech CE",
+    "year": 2,
+    "enrollment": "26IT101",
+    "cgpa": 6.7,
+    "city": "Anand"
+  },
+  {
+    "id": 3,
+    "name": "Rohan Mehta",
+    "email": "rohan.mehta@charusat.edu.in",
+    "course": "B.Tech EC",
+    "year": 3,
+    "enrollment": "26IT102",
+    "cgpa": 6.9,
+    "city": "Ahmedabad"
+  },
+  {
+    "id": 4,
+    "name": "Isha Desai",
+    "email": "isha.desai@charusat.edu.in",
+    "course": "B.Tech ME",
+    "year": 4,
+    "enrollment": "26IT103",
+    "cgpa": 7.1,
+    "city": "Surat"
+  },
+  {
+    "id": 5,
+    "name": "Krish Joshi",
+    "email": "krish.joshi@charusat.edu.in",
+    "course": "B.Tech IT",
+    "year": 1,
+    "enrollment": "26IT104",
+    "cgpa": 7.3,
+    "city": "Nadiad"
+  },
+  {
+    "id": 6,
+    "name": "Meera Trivedi",
+    "email": "meera.trivedi@charusat.edu.in",
+    "course": "B.Tech CE",
+    "year": 2,
+    "enrollment": "26IT105",
+    "cgpa": 7.5,
+    "city": "Vadodara"
+  },
+  {
+    "id": 7,
+    "name": "Yash Parmar",
+    "email": "yash.parmar@charusat.edu.in",
+    "course": "B.Tech EC",
+    "year": 3,
+    "enrollment": "26IT106",
+    "cgpa": 7.7,
+    "city": "Anand"
+  },
+  {
+    "id": 8,
+    "name": "Nisha Solanki",
+    "email": "nisha.solanki@charusat.edu.in",
+    "course": "B.Tech ME",
+    "year": 4,
+    "enrollment": "26IT107",
+    "cgpa": 7.9,
+    "city": "Ahmedabad"
+  },
+  {
+    "id": 9,
+    "name": "Dev Vyas",
+    "email": "dev.vyas@charusat.edu.in",
+    "course": "B.Tech IT",
+    "year": 1,
+    "enrollment": "26IT108",
+    "cgpa": 8.1,
+    "city": "Surat"
+  },
+  {
+    "id": 10,
+    "name": "Pooja Rana",
+    "email": "pooja.rana@charusat.edu.in",
+    "course": "B.Tech CE",
+    "year": 2,
+    "enrollment": "26IT109",
+    "cgpa": 8.3,
+    "city": "Nadiad"
+  },
+  {
+    "id": 11,
+    "name": "Harsh Thakkar",
+    "email": "harsh.thakkar@charusat.edu.in",
+    "course": "B.Tech EC",
+    "year": 3,
+    "enrollment": "26IT110",
+    "cgpa": 8.5,
+    "city": "Vadodara"
+  },
+  {
+    "id": 12,
+    "name": "Kavya Bhatt",
+    "email": "kavya.bhatt@charusat.edu.in",
+    "course": "B.Tech ME",
+    "year": 4,
+    "enrollment": "26IT111",
+    "cgpa": 8.7,
+    "city": "Anand"
+  },
+  {
+    "id": 13,
+    "name": "Jay Chauhan",
+    "email": "jay.chauhan@charusat.edu.in",
+    "course": "B.Tech IT",
+    "year": 1,
+    "enrollment": "26IT112",
+    "cgpa": 8.9,
+    "city": "Ahmedabad"
+  },
+  {
+    "id": 14,
+    "name": "Riya Gandhi",
+    "email": "riya.gandhi@charusat.edu.in",
+    "course": "B.Tech CE",
+    "year": 2,
+    "enrollment": "26IT113",
+    "cgpa": 9.1,
+    "city": "Surat"
+  },
+  {
+    "id": 15,
+    "name": "Smit Prajapati",
+    "email": "smit.prajapati@charusat.edu.in",
+    "course": "B.Tech EC",
+    "year": 3,
+    "enrollment": "26IT114",
+    "cgpa": 9.3,
+    "city": "Nadiad"
+  },
+  {
+    "id": 16,
+    "name": "Tanvi Modi",
+    "email": "tanvi.modi@charusat.edu.in",
+    "course": "B.Tech ME",
+    "year": 4,
+    "enrollment": "26IT115",
+    "cgpa": 9.5,
+    "city": "Vadodara"
+  },
+  {
+    "id": 17,
+    "name": "Om Raval",
+    "email": "om.raval@charusat.edu.in",
+    "course": "B.Tech IT",
+    "year": 1,
+    "enrollment": "26IT116",
+    "cgpa": 9.7,
+    "city": "Anand"
+  },
+  {
+    "id": 18,
+    "name": "Sneha Dave",
+    "email": "sneha.dave@charusat.edu.in",
+    "course": "B.Tech CE",
+    "year": 2,
+    "enrollment": "26IT117",
+    "cgpa": 9.9,
+    "city": "Ahmedabad"
+  },
+  {
+    "id": 19,
+    "name": "Parth Kapadia",
+    "email": "parth.kapadia@charusat.edu.in",
+    "course": "B.Tech EC",
+    "year": 3,
+    "enrollment": "26IT118",
+    "cgpa": 6.6,
+    "city": "Surat"
+  },
+  {
+    "id": 20,
+    "name": "Anjali Nair",
+    "email": "anjali.nair@charusat.edu.in",
+    "course": "B.Tech ME",
+    "year": 4,
+    "enrollment": "26IT119",
+    "cgpa": 6.8,
+    "city": "Nadiad"
+  }
+]

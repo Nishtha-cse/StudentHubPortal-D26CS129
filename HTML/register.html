@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="icon" href="images/charusat.png" type="image/png">
 <title>Register - StudentHub</title>
 </head>
 <body class="page-register">
+
 <header>
   <div class="brand">
     <img src="images/charusat.png" alt="CHARUSAT logo">
     <h1>Register</h1>
   </div>
+
   <nav aria-label="Main navigation">
     <ul>
       <li><a href="home.html">Home</a></li>
@@ -27,28 +30,147 @@
 </header>
 
 <main id="main-content">
-  <section aria-labelledby="register-heading">
-    <h2 id="register-heading">Create an Account</h2>
-    <form action="#" method="post">
-      <label for="fullname">Full Name</label><br>
-      <input type="text" id="fullname" name="fullname"><br><br>
+  <section class="register-card" aria-labelledby="register-heading">
 
-      <label for="email">Email</label><br>
-      <input type="email" id="email" name="email"><br><br>
+    <div class="register-head">
+      <span class="register-badge" aria-hidden="true">&#127891;</span>
+      <h2 id="register-heading">Create an Account</h2>
+      <p>Fill in your details to join StudentHub.</p>
+    </div>
 
-      <label for="studentid">Student ID</label><br>
-      <input type="text" id="studentid" name="studentid"><br><br>
+    <form id="registerForm" novalidate>
 
-      <label for="password">Password</label><br>
-      <input type="password" id="password" name="password"><br><br>
+      <!-- Full name -->
+      <div class="form-group">
+        <label for="fullname">Full Name <span class="text-danger">*</span></label>
+        <div class="input-wrapper">
+          <span class="input-icon" aria-hidden="true">&#128100;</span>
+          <input type="text" id="fullname" name="fullname" class="form-control"
+                 placeholder="Enter your full name" autocomplete="name"
+                 aria-describedby="fullnameError">
+        </div>
+        <span id="fullnameError" class="error-message" role="alert"></span>
+      </div>
 
-      <label for="confirmpassword">Confirm Password</label><br>
-      <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
+      <!-- Email + mobile -->
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="email">Email <span class="text-danger">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">&#9993;</span>
+            <input type="email" id="email" name="email" class="form-control"
+                   placeholder="you@example.com" autocomplete="email"
+                   aria-describedby="emailError">
+          </div>
+          <span id="emailError" class="error-message" role="alert"></span>
+        </div>
 
-      <button type="submit">Register</button>
+        <div class="form-group">
+          <label for="mobile">Mobile Number <span class="text-danger">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">&#128241;</span>
+            <input type="tel" id="mobile" name="mobile" class="form-control"
+                   placeholder="10-digit number" maxlength="10" inputmode="numeric"
+                   autocomplete="tel-national" aria-describedby="mobileError">
+          </div>
+          <span id="mobileError" class="error-message" role="alert"></span>
+        </div>
+      </div>
+
+      <!-- Password + confirm -->
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="password">Password <span class="text-danger">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">&#128274;</span>
+            <input type="password" id="password" name="password" class="form-control"
+                   placeholder="Create a password" autocomplete="new-password"
+                   aria-describedby="passwordError strengthText">
+          </div>
+          <div class="password-strength" aria-hidden="true">
+            <div id="strengthBar"></div>
+          </div>
+          <small id="strengthText" aria-live="polite">Password strength: &mdash;</small>
+          <span id="passwordError" class="error-message" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password <span class="text-danger">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">&#128274;</span>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                   placeholder="Re-enter password" autocomplete="new-password"
+                   aria-describedby="confirmPasswordError">
+          </div>
+          <span id="confirmPasswordError" class="error-message" role="alert"></span>
+        </div>
+      </div>
+
+      <!-- Course + year -->
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="course">Course <span class="text-danger">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">&#128214;</span>
+            <select id="course" name="course" class="form-select" aria-describedby="courseError">
+              <option value="">-- Select Course --</option>
+              <option value="btech">B.Tech</option>
+              <option value="bca">BCA</option>
+              <option value="mca">MCA</option>
+              <option value="mtech">M.Tech</option>
+            </select>
+          </div>
+          <span id="courseError" class="error-message" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="year">Academic Year <span class="text-danger">*</span></label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">&#128197;</span>
+            <select id="year" name="year" class="form-select" aria-describedby="yearError">
+              <option value="">-- Select Year --</option>
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+            </select>
+          </div>
+          <span id="yearError" class="error-message" role="alert"></span>
+        </div>
+      </div>
+
+      <!-- Gender -->
+      <fieldset class="form-group">
+        <legend>Gender <span class="text-danger">*</span></legend>
+        <div class="gender-radio-group">
+          <label class="gender-option">
+            <input type="radio" name="gender" value="male">
+            <span class="gender-pill">Male</span>
+          </label>
+          <label class="gender-option">
+            <input type="radio" name="gender" value="female">
+            <span class="gender-pill">Female</span>
+          </label>
+          <label class="gender-option">
+            <input type="radio" name="gender" value="other">
+            <span class="gender-pill">Other</span>
+          </label>
+        </div>
+        <span id="genderError" class="error-message" role="alert"></span>
+      </fieldset>
+
+      <!-- Terms -->
+      <div class="terms-check">
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I accept the Terms &amp; Conditions</label>
+        <span id="termsError" class="error-message" role="alert"></span>
+      </div>
+
+      <button type="submit" class="register-button">Create Account</button>
+      <p id="successMessage" class="success-message" role="status" aria-live="polite"></p>
     </form>
 
-    <p>Already have an account? <a href="login.html">Login</a></p>
+    <p class="register-foot">Already have an account? <a href="login.html">Login</a></p>
   </section>
 </main>
 
@@ -60,5 +182,6 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
+<script src="../JAVASCRIPT/register.js"></script>
 </body>
 </html>

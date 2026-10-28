@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "title": "Hackathon 2026",
+    "category": "Technical",
+    "date": "2026-10-18",
+    "venue": "CSPIT Auditorium",
+    "status": "Open",
+    "seats": 120,
+    "description": "24-hour coding marathon to build solutions for campus problems."
+  },
+  {
+    "id": 2,
+    "title": "Web Dev Workshop",
+    "category": "Workshop",
+    "date": "2026-10-10",
+    "venue": "Lab 3, Block A",
+    "status": "Open",
+    "seats": 40,
+    "description": "Hands-on session on HTML, CSS and JavaScript fundamentals."
+  },
+  {
+    "id": 3,
+    "title": "Navratri Garba Night",
+    "category": "Cultural",
+    "date": "2026-10-15",
+    "venue": "Main Ground",
+    "status": "Open",
+    "seats": 500,
+    "description": "Annual garba celebration with live music and food stalls."
+  },
+  {
+    "id": 4,
+    "title": "Inter-College Cricket",
+    "category": "Sports",
+    "date": "2026-10-22",
+    "venue": "University Cricket Ground",
+    "status": "Open",
+    "seats": 200,
+    "description": "Knockout cricket tournament between 12 colleges."
+  },
+  {
+    "id": 5,
+    "title": "AI & ML Seminar",
+    "category": "Seminar",
+    "date": "2026-10-12",
+    "venue": "Seminar Hall 1",
+    "status": "Open",
+    "seats": 150,
+    "description": "Expert talk on practical applications of machine learning."
+  },
+  {
+    "id": 6,
+    "title": "Poster Making Contest",
+    "category": "Cultural",
+    "date": "2026-09-20",
+    "venue": "Art Room",
+    "status": "Closed",
+    "seats": 60,
+    "description": "Design posters on the theme of sustainable campus."
+  },
+  {
+    "id": 7,
+    "title": "Cyber Security Bootcamp",
+    "category": "Workshop",
+    "date": "2026-09-25",
+    "venue": "Lab 5, Block B",
+    "status": "Closed",
+    "seats": 35,
+    "description": "Introduction to ethical hacking and safe web practices."
+  },
+  {
+    "id": 8,
+    "title": "Annual Sports Day",
+    "category": "Sports",
+    "date": "2026-11-05",
+    "venue": "Sports Complex",
+    "status": "Open",
+    "seats": 600,
+    "description": "Track and field events open to all departments."
+  },
+  {
+    "id": 9,
+    "title": "Tech Quiz",
+    "category": "Technical",
+    "date": "2026-10-28",
+    "venue": "Room 204",
+    "status": "Open",
+    "seats": 80,
+    "description": "Team-based quiz covering programming, networks and trivia."
+  },
+  {
+    "id": 10,
+    "title": "Startup Pitch Day",
+    "category": "Seminar",
+    "date": "2026-11-12",
+    "venue": "Conference Hall",
+    "status": "Open",
+    "seats": 100,
+    "description": "Students pitch startup ideas to a panel of mentors."
+  },
+  {
+    "id": 11,
+    "title": "Photography Walk",
+    "category": "Cultural",
+    "date": "2026-09-30",
+    "venue": "Campus Gardens",
+    "status": "Closed",
+    "seats": 30,
+    "description": "Guided photo walk with tips from a professional."
+  },
+  {
+    "id": 12,
+    "title": "Git & GitHub Workshop",
+    "category": "Workshop",
+    "date": "2026-10-08",
+    "venue": "Lab 2, Block A",
+    "status": "Open",
+    "seats": 45,
+    "description": "Learn version control, branching and pull requests."
+  },
+  {
+    "id": 13,
+    "title": "Badminton Championship",
+    "category": "Sports",
+    "date": "2026-11-18",
+    "venue": "Indoor Stadium",
+    "status": "Open",
+    "seats": 64,
+    "description": "Singles and doubles tournament for men and women."
+  },
+  {
+    "id": 14,
+    "title": "Robotics Expo",
+    "category": "Technical",
+    "date": "2026-11-25",
+    "venue": "Exhibition Hall",
+    "status": "Open",
+    "seats": 250,
+    "description": "Showcase of student-built robots and IoT projects."
+  },
+  {
+    "id": 15,
+    "title": "Career Guidance Talk",
+    "category": "Seminar",
+    "date": "2026-09-15",
+    "venue": "Auditorium",
+    "status": "Closed",
+    "seats": 300,
+    "description": "Alumni share placement and higher-study guidance."
+  },
+  {
+    "id": 16,
+    "title": "Open Mic Evening",
+    "category": "Cultural",
+    "date": "2026-11-02",
+    "venue": "Amphitheatre",
+    "status": "Open",
+    "seats": 150,
+    "description": "Poetry, music and stand-up performances by students."
+  },
+  {
+    "id": 17,
+    "title": "Database Design Workshop",
+    "category": "Workshop",
+    "date": "2026-11-08",
+    "venue": "Lab 4, Block B",
+    "status": "Open",
+    "seats": 40,
+    "description": "ER modelling and MySQL basics with live exercises."
+  }
+]

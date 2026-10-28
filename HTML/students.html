@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students | StudentHub</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- REPLACE this header/nav with the same one used on your other pages -->
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="event.html">Events</a>
+      <a href="students.html">Students</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Student Profiles</h1>
+    <p>Student records loaded from students.json.</p>
+
+    <section aria-label="Search and filters" class="toolbar">
+      <div class="field">
+        <label for="searchInput">Search</label>
+        <input type="search" id="searchInput" placeholder="Type to search...">
+      </div>
+      <div class="field">
+        <label for="courseFilter">Course</label>
+        <select id="courseFilter"><option value="">All courses</option></select>
+      </div>
+      <div class="field">
+        <label for="yearFilter">Year</label>
+        <select id="yearFilter"><option value="">All years</option></select>
+      </div>
+      <div class="field">
+        <label for="sortSelect">Sort by</label>
+        <select id="sortSelect">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+          <option value="cgpa-desc">CGPA (highest first)</option>
+          <option value="year-asc">Year</option>
+        </select>
+      </div>
+      <button type="button" id="resetBtn">Reset</button>
+    </section>
+
+    <div id="status" class="status" hidden></div>
+
+    <p id="resultCount" class="result-count" aria-live="polite"></p>
+    <section id="list" class="card-grid" aria-label="Student Profiles list"></section>
+    <nav id="pagination" class="pagination" aria-label="Pagination"></nav>
+  </main>
+
+  <!-- REPLACE this footer with the one used on your other pages -->
+  <footer>
+    <p>&copy; 2026 StudentHub - CHARUSAT</p>
+  </footer>
+
+  <!-- type="module" is required because the JS files use import/export -->
+  <script type="module" src="../JAVASCRIPT/students.js"></script>
+</body>
+</html>

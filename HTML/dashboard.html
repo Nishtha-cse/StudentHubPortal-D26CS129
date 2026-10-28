@@ -77,6 +77,42 @@
     <h2 id="notices-heading">Notices</h2>
     <p>Mid-semester exams begin October 10. Check the Events page for your full timetable.</p>
   </aside>
+
+  <section aria-labelledby="directory-heading" class="data-section wide-section">
+    <h2 id="directory-heading">Student Directory</h2>
+
+    <div class="toolbar" role="search">
+      <div class="field">
+        <label for="searchInput">Search</label>
+        <input type="search" id="searchInput" placeholder="Type to search...">
+      </div>
+      <div class="field">
+        <label for="courseFilter">Course</label>
+        <select id="courseFilter" class="form-select"><option value="">All courses</option></select>
+      </div>
+      <div class="field">
+        <label for="yearFilter">Year</label>
+        <select id="yearFilter" class="form-select"><option value="">All years</option></select>
+      </div>
+      <div class="field">
+        <label for="sortSelect">Sort by</label>
+        <select id="sortSelect" class="form-select">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+          <option value="cgpa-desc">CGPA (highest first)</option>
+          <option value="year-asc">Year</option>
+        </select>
+      </div>
+      <div class="field field-button">
+        <button type="button" id="resetBtn">Reset</button>
+      </div>
+    </div>
+
+    <div id="status" class="status" hidden></div>
+    <p id="resultCount" class="result-count" aria-live="polite"></p>
+    <div id="list" class="results-grid"></div>
+    <nav id="pagination" class="pagination" aria-label="Student directory pages"></nav>
+  </section>
 </main>
 
 <footer>
@@ -87,7 +123,8 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
-<script src="../js/theme.js" defer></script>
-<script src="../js/menu.js" defer></script>
+<script src="../JAVASCRIPT/theme.js" defer></script>
+<script src="../JAVASCRIPT/menu.js" defer></script>
+<script type="module" src="../JAVASCRIPT/student.js"></script>
 </body>
 </html>

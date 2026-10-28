@@ -1,17 +1,15 @@
-/* Feature 5: Collapsible FAQ accordion */
 (function () {
   "use strict";
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".accordion-trigger").forEach(function (trigger) {
-      trigger.addEventListener("click", function () {
-        var panelId = trigger.getAttribute("aria-controls");
-        var panel = panelId ? document.getElementById(panelId) : null;
-        var isExpanded = trigger.getAttribute("aria-expanded") === "true";
+  document.addEventListener("click", function (event) {
+    var trigger = event.target.closest(".accordion-trigger");
+    if (!trigger) return;
 
-        trigger.setAttribute("aria-expanded", String(!isExpanded));
-        if (panel) panel.hidden = isExpanded;
-      });
-    });
+    var panelId = trigger.getAttribute("aria-controls");
+    var panel = panelId ? document.getElementById(panelId) : null;
+    var isExpanded = trigger.getAttribute("aria-expanded") === "true";
+
+    trigger.setAttribute("aria-expanded", String(!isExpanded));
+    if (panel) panel.hidden = isExpanded;
   });
 })();

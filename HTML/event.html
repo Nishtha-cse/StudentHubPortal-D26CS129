@@ -19,7 +19,7 @@
 <header>
   <div class="brand">
     <img src="../images/charusat.png" alt="CHARUSAT logo">
-    <h1>Upcoming Events</h1>
+    <h1>Events</h1>
   </div>
     <div class="header-actions">
     <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
@@ -43,31 +43,41 @@
 </header>
 
 <main id="main-content">
-  <section aria-labelledby="events-heading">
-    <h2 id="events-heading">All Events</h2>
+  <section aria-labelledby="events-heading" class="data-section">
+    <h2 id="events-heading">Campus Events</h2>
 
-    <article>
-      <h3>Annual Tech Fest</h3>
-      <p>Date: March 15, 2026</p>
-      <p>Venue: Main Auditorium</p>
-      <p><a href="#">[ Register ]</a></p>
-    </article>
+    <div class="toolbar" role="search">
+      <div class="field">
+        <label for="searchInput">Search</label>
+        <input type="search" id="searchInput" placeholder="Type to search...">
+      </div>
+      <div class="field">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter" class="form-select"><option value="">All categories</option></select>
+      </div>
+      <div class="field">
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter" class="form-select"><option value="">All statuses</option></select>
+      </div>
+      <div class="field">
+        <label for="sortSelect">Sort by</label>
+        <select id="sortSelect" class="form-select">
+          <option value="date-asc">Date (earliest first)</option>
+          <option value="date-desc">Date (latest first)</option>
+          <option value="title-asc">Title (A-Z)</option>
+          <option value="seats-desc">Seats (most first)</option>
+        </select>
+      </div>
+      <div class="field field-button">
+        <button type="button" id="resetBtn">Reset</button>
+      </div>
+    </div>
 
-    <article>
-      <h3>Blood Donation Camp</h3>
-      <p>Date: April 2, 2026</p>
-      <p>Venue: Sports Complex Ground</p>
-      <p><a href="#">[ Register ]</a></p>
-    </article>
+    <div id="status" class="status" hidden></div>
+    <p id="resultCount" class="result-count" aria-live="polite"></p>
+    <div id="list" class="results-grid"></div>
+    <nav id="pagination" class="pagination" aria-label="Events pages"></nav>
   </section>
-
-  <aside aria-labelledby="categories-heading">
-    <h2 id="categories-heading">Event Categories</h2>
-    <ul>
-      <li>Technical</li>
-      <li>Cultural &amp; Social</li>
-    </ul>
-  </aside>
 </main>
 
 <footer>
@@ -78,7 +88,8 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
-<script src="../js/theme.js" defer></script>
-<script src="../js/menu.js" defer></script>
+<script src="../JAVASCRIPT/theme.js" defer></script>
+<script src="../JAVASCRIPT/menu.js" defer></script>
+<script type="module" src="../JAVASCRIPT/events.js"></script>
 </body>
 </html>

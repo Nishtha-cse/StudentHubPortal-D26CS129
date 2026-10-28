@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="icon" href="../images/charusat.png" type="image/png">
-<title>FAQs - StudentHub</title>
-<meta name="description" content="Frequently asked questions about using StudentHub.">
+<title>FAQ - StudentHub</title>
 <script>
   (function () {
     var saved = localStorage.getItem("studenthub-theme");
@@ -44,39 +43,35 @@
 </header>
 
 <main id="main-content">
-  <section aria-label="Frequently asked questions">
-    <div class="accordion-item">
-      <h2>
-        <button type="button" class="accordion-trigger" id="faq1-trigger" aria-expanded="false" aria-controls="faq1-panel">
-          How to reset the password?
-        </button>
-      </h2>
-      <div class="accordion-panel" id="faq1-panel" role="region" aria-labelledby="faq1-trigger" hidden>
-        <p>You can reset your password by clicking the "Forgot Password" link on the login page and following the instructions.</p>
+  <section aria-labelledby="faq-heading" class="data-section">
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+    <div class="toolbar" role="search">
+      <div class="field">
+        <label for="searchInput">Search</label>
+        <input type="search" id="searchInput" placeholder="Type to search...">
+      </div>
+      <div class="field">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter" class="form-select"><option value="">All categories</option></select>
+      </div>
+      <div class="field">
+        <label for="sortSelect">Sort by</label>
+        <select id="sortSelect" class="form-select">
+          <option value="default">Default order</option>
+          <option value="question-asc">Question (A-Z)</option>
+          <option value="category-asc">Category</option>
+        </select>
+      </div>
+      <div class="field field-button">
+        <button type="button" id="resetBtn">Reset</button>
       </div>
     </div>
 
-    <div class="accordion-item">
-      <h2>
-        <button type="button" class="accordion-trigger" id="faq2-trigger" aria-expanded="false" aria-controls="faq2-panel">
-          How to update profile information?
-        </button>
-      </h2>
-      <div class="accordion-panel" id="faq2-panel" role="region" aria-labelledby="faq2-trigger" hidden>
-        <p>You can update your profile information by navigating to the "Profile" section and clicking the "Edit Profile" button.</p>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2>
-        <button type="button" class="accordion-trigger" id="faq3-trigger" aria-expanded="false" aria-controls="faq3-panel">
-          How to change the email address?
-        </button>
-      </h2>
-      <div class="accordion-panel" id="faq3-panel" role="region" aria-labelledby="faq3-trigger" hidden>
-        <p>You can change your email address by going to the "Profile" section and clicking the "Edit Profile" button.</p>
-      </div>
-    </div>
+    <div id="status" class="status" hidden></div>
+    <p id="resultCount" class="result-count" aria-live="polite"></p>
+    <div id="list" class="faq-list"></div>
+    <nav id="pagination" class="pagination" aria-label="FAQ pages"></nav>
   </section>
 </main>
 
@@ -88,8 +83,9 @@
   <p>&copy; 2026 StudentHub</p>
 </footer>
 
-<script src="../js/theme.js" defer></script>
-<script src="../js/menu.js" defer></script>
-<script src="../js/accordion.js" defer></script>
+<script src="../JAVASCRIPT/theme.js" defer></script>
+<script src="../JAVASCRIPT/menu.js" defer></script>
+<script src="../JAVASCRIPT/accordion.js" defer></script>
+<script type="module" src="../JAVASCRIPT/faqs.js"></script>
 </body>
 </html>
